@@ -51,7 +51,6 @@ const LandingPage = () => {
   // Function to fetch weather data by city name
   const fetchWeatherDataByCity = async (city) => {
     try {
-      // Call the serverless function to get latitude and longitude for the city
       const geocodingResponse = await fetch(
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${geolocationApiKey}`
       );
