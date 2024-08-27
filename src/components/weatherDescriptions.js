@@ -1,0 +1,71 @@
+import thunderstorm from "../assets/thunderstorm.png";
+import sun from "../assets/CardsIcons/sunicon.png";
+import clouds from "../assets/clouds.png";
+import drizzle from "../assets/drizzle.png";
+import rain from "../assets/rainy-day.png";
+import snow from "../assets/snow.png";
+
+const weatherDescriptions = {
+  desc: {
+    0: "Clear",
+    1: "Clear",
+    2: "Partly cloudy",
+    3: "Overcast",
+    45: "Fog",
+    48: "Fog",
+    51: "Light drizzle",
+    53: "Moderate drizzle",
+    55: "Dense drizzle",
+    56: "Light freezing drizzle",
+    57: "Dense freezing drizzle",
+    61: "Slight rain",
+    63: "Moderate rain",
+    65: "Heavy rain",
+    66: "Light freezing rain",
+    67: "Heavy freezing rain",
+    71: "Slight snow",
+    73: "Moderate snow",
+    75: "Heavy snow",
+    77: "Snow grains",
+    80: "Slight rain",
+    81: "Moderate rain",
+    82: "Heavy rain ",
+    85: "Slight snow",
+    86: "Heavy snow",
+    95: "Thunderstorm",
+    96: "Thunderstorm with slight hail",
+    99: "Thunderstorm with heavy hail",
+  },
+  icon: {
+    0: sun,
+    1: sun,
+    2: clouds,
+    3: clouds,
+    45: clouds,
+    48: clouds,
+    51: drizzle,
+    53: drizzle,
+    55: drizzle,
+    56: drizzle,
+    57: drizzle,
+    61: rain,
+    63: rain,
+    65: rain,
+    66: rain,
+    67: rain,
+    71: snow,
+    73: snow,
+    75: snow,
+    77: snow,
+    80: rain,
+    81: rain,
+    82: rain,
+    85: snow,
+    86: snow,
+    95: thunderstorm,
+    96: thunderstorm,
+    99: thunderstorm,
+  },
+};
+
+export default weatherDescriptions;

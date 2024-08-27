@@ -1,0 +1,496 @@
+@font-face {
+  font-family: "Sofia Pro Light";
+  src: url(./assets/fonts/sofiapro-light.otf), format("Opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sofia Pro Light";
+}
+.main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+/* rightside */
+.firsthalf {
+  background-color: #f2f2f4;
+  position: relative;
+  width: 70%;
+  height: 100vh;
+  padding: 30px 55px;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.firsthalf .buttons {
+  display: flex;
+  gap: 16px;
+}
+.firsthalf .buttons button {
+  padding: 5px 3px;
+  font-size: 20px;
+  font-weight: 700;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  color: gray;
+}
+.firsthalf .buttons button.active {
+  border-bottom: 2px solid black;
+  color: black;
+}
+.firsthalf .lower {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+/* current weather cards */
+.firsthalf .lower-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
+  column-gap: 10px;
+}
+.lower .lower-heading {
+  font-size: 25px;
+}
+.lower .lower-cards .current-card {
+  position: relative;
+  display: flex;
+  width: 18rem;
+  height: 9.5rem;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+  color: black;
+  background-color: #ffff;
+  padding: 14px 22px;
+  border-radius: 10px;
+}
+.lower-cards .current-card .daily-heading {
+  font-size: 15px;
+  color: gray;
+}
+.current-card .daily-info {
+  font-size: 35px;
+}
+.current-card img {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  right: 1.7rem;
+  top: 4rem;
+}
+.current-card .sunrise {
+  display: flex;
+  gap: 7px;
+  flex-direction: column;
+}
+.current-card .sunrise h1 {
+  font-size: 22px;
+}
+.current-card .degree-sign {
+  margin-left: 2px;
+  font-size: 18px;
+  position: absolute;
+  top: 5.3rem;
+}
+/* day cards */
+.firsthalf .card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.firsthalf .card {
+  display: flex;
+  width: 6.4rem;
+  height: 8.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  color: black;
+  border: 1px solid black;
+  background-color: #ffff;
+  padding: 8px 22px;
+  border-radius: 10px;
+}
+.firsthalf .card .card-time {
+  padding: 4px 0;
+  border-bottom: 1px solid black;
+  font-weight: 300;
+  font-size: 16px;
+}
+.firsthalf .card .card-img img {
+  width: 40px;
+  margin-top: 8px;
+}
+/* next days cards */
+.firsthalf .card .next-days {
+  display: flex;
+  width: 7rem;
+  height: 8.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  color: black;
+  border: 1px solid black;
+  background-color: #ffff;
+  padding: 8px 22px;
+  border-radius: 10px;
+}
+.firsthalf .card .card-img .next-img img {
+  width: 40px;
+  margin-top: 8px;
+}
+.firsthalf .card .card-temp {
+  font-size: 18px;
+  font-weight: bold;
+}
+.firsthalf .card .day-name {
+  padding: 4px 0;
+  font-weight: 30;
+  font-size: 16px;
+}
+.firsthalf .card .day-maxtemp {
+  font-size: 18px;
+  font-weight: bold;
+}
+.firsthalf .card .day-mintemp {
+  font-size: 14px;
+  font-weight: bold;
+  color: gray;
+}
+/* leftside */
+.secondhalf {
+  width: 30%;
+  height: 100%;
+  background-color: #ffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 38px 43px;
+}
+.secondhalf .top {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  align-items: flex-start;
+}
+.secondhalf .search {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  border-radius: 28px;
+  padding: 10px 15px;
+  border: 1px solid gray;
+  transition: box-shadow 0.25s;
+}
+.search:focus-within {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.75);
+}
+.secondhalf input {
+  width: 15rem;
+  font-size: 16px;
+  border: none;
+  background: transparent;
+  margin-left: 12px;
+  outline: none;
+}
+.secondhalf .top .middle {
+  display: flex;
+  position: relative;
+  padding: 0 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.secondhalf .middle h1 {
+  font-size: 22px;
+}
+.secondhalf .middle .temp h1 {
+  font-size: 70px;
+  height: 5rem;
+}
+.secondhalf .middle .temp span {
+  position: absolute;
+  top: 2.9rem;
+  font-size: 30px;
+  margin-left: 2px;
+}
+.secondhalf .middle .temp .main-weather {
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  left: 12.2rem;
+  bottom: 1rem;
+}
+.secondhalf .middle .weatherdesc {
+  font-size: 18px;
+}
+.secondhalf .top .dateplace {
+  padding-top: 30px;
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid gray;
+  width: 93%;
+  gap: 10px;
+}
+.secondhalf .top .dateplace h1 {
+  font-size: 16px;
+}
+.secondhalf .skyesque-img {
+  margin-top: 45px;
+  width: 21rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.secondhalf .img-text {
+  font-size: 30px;
+  position: absolute;
+  top: 6.8rem;
+  left: 6.7rem;
+  color: black;
+}
+/* desktop view */
+@media (max-width: 1270px) {
+  .firsthalf {
+    height: 100%;
+    width: 60%;
+  }
+  .firsthalf .lower-cards {
+    grid-template-columns: repeat(2, 3fr);
+  }
+  .firsthalf .card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+  }
+  .secondhalf {
+    width: 40%;
+    height: 100%;
+    padding: 40px 20px;
+  }
+  .secondhalf .top {
+    gap: 30px;
+  }
+  .secondhalf .top .middle {
+    margin-top: 10rem;
+    margin-left: 25px;
+  }
+  .main-weather {
+    margin-bottom: 10rem;
+    margin-left: -12.3rem;
+  }
+  .secondhalf .skyesque-img {
+    margin-top: 50px;
+    height: 21rem;
+  }
+  .secondhalf .img-text {
+    top: 11.3rem;
+  }
+}
+/* md viewports */
+@media (max-width: 1024px) {
+  .main {
+    width: 100%;
+    flex-direction: column;
+  }
+  .firsthalf {
+    width: 100%;
+  }
+  .firsthalf .card-container {
+    grid-template-columns: repeat(4, 2fr);
+  }
+  .firsthalf .lower-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .secondhalf {
+    width: 100%;
+  }
+  .secondhalf .top {
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+  .secondhalf .top .middle {
+    margin-top: 30px;
+    margin-right: 15rem;
+  }
+  .secondhalf .top .dateplace {
+    width: 25rem;
+    align-items: center;
+  }
+  .secondhalf .search {
+    width: 27rem;
+  }
+  .main-weather {
+    margin-left: 20px;
+    top: 0;
+  }
+  .secondhalf .skyesque-img {
+    display: none;
+  }
+}
+/* mobile view */
+@media (max-width: 425px) {
+  .main {
+    height: 100%;
+    width: 100%;
+  }
+  .firsthalf {
+    width: 100%;
+    padding: 20px 30px;
+  }
+  .firsthalf .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .firsthalf .buttons {
+    gap: 10px;
+  }
+  .firsthalf .buttons button {
+    padding: 4px 3px;
+    font-size: 14px;
+  }
+  .firsthalf .card {
+    width: 4rem;
+    height: 6rem;
+    padding: 6px 15px;
+  }
+  .firsthalf .card .card-time {
+    font-size: 12px;
+  }
+  .firsthalf .card .card-img img {
+    width: 22px;
+  }
+  .firsthalf .card .card-temp {
+    font-size: 14px;
+  }
+  .firsthalf .card .next-days {
+    width: 4rem;
+    height: 6rem;
+    padding: 6px 15px;
+  }
+  .firsthalf .card .next-days .card-img img {
+    width: 22px;
+  }
+  .firsthalf .card .day-name {
+    font-size: 12px;
+  }
+  .firsthalf .card .day-maxtemp {
+    font-size: 14px;
+  }
+  .firsthalf .card .day-mintemp {
+    font-size: 10px;
+  }
+  .firsthalf .lower {
+    align-items: center;
+  }
+  .firsthalf .lower .lower-heading {
+    margin-left: -11rem;
+    font-size: 16px;
+  }
+  .firsthalf .lower .lower-cards .current-card {
+    width: 19rem;
+    height: 7rem;
+    padding: 6px 24px;
+  }
+  .lower-cards .current-card .daily-heading {
+    font-size: 12px;
+  }
+  .current-card .daily-info {
+    font-size: 25px;
+  }
+  .current-card .degree-sign {
+    margin-left: 3px;
+    font-size: 10px;
+    position: absolute;
+    top: 4.3rem;
+  }
+  .current-card .sunrise {
+    gap: 5px;
+  }
+  .current-card .sunrise h1 {
+    font-size: 18px;
+  }
+  .current-card img {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    right: 2.5rem;
+    top: 3.3rem;
+  }
+  .secondhalf {
+    width: 80%;
+    align-items: center;
+    margin-left: 20px;
+    padding: 30px 30px;
+  }
+  .secondhalf .top {
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .secondhalf .top .middle {
+    margin-top: 10px;
+    margin-right: 0;
+    gap: 5px;
+  }
+  .secondhalf .search {
+    margin-left: 15px;
+    width: 15rem;
+    padding: 4px 10px;
+  }
+  .secondhalf input {
+    margin-left: 8px;
+  }
+  .secondhalf .top .dateplace {
+    width: 90%;
+    align-items: flex-start;
+    padding-top: 20px;
+    gap: 5px;
+    margin-left: 25px;
+  }
+  .secondhalf .middle h1 {
+    font-size: 15px;
+  }
+  .secondhalf .middle .temp h1 {
+    font-size: 32px;
+    height: fit-content;
+  }
+  .secondhalf .middle .temp span {
+    font-size: 12px;
+    top: 1.8rem;
+  }
+  .secondhalf .middle .weatherdesc {
+    font-size: 15px;
+  }
+  .secondhalf .middle .temp .main-weather {
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+    left: 8.2rem;
+  }
+  .secondhalf .top .dateplace h1 {
+    font-size: 12px;
+  }
+  .secondhalf .skyesque-div {
+    display: none;
+  }
+}
